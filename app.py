@@ -89,9 +89,9 @@ translation_dict = {
     "Coke": "可樂", "Pepsi": "百事可樂", "Sprite": "雪碧", "Milk tea": "奶茶", "Oolong tea": "烏龍茶", "Green tea": "綠茶", "Black tea": "紅茶", "Coffee": "咖啡", "Juice": "果汁", "Beer": "啤酒", "Wine": "紅酒", "Mineral water": "礦泉水"
 }
 
-# 初始化模型
+# 修改後的寫法：改在推論時才過濾類別
 model = YOLO('yolov8n.pt')
-model.set_classes(custom_food_list)
+# 把 model.set_classes(custom_food_list) 這一行刪掉或註解掉
 
 @app.route('/scan_image', methods=['POST'])
 def scan_image():
